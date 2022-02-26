@@ -9,18 +9,18 @@ brick_texture = load_texture("assets/brick_block.png")
 dirt_texture = load_texture("assets/dirt_block.png")
 
 class Voxel(Button):
-    def __init__(self, position = (0, 0, 0)):
+    def __init__(self, position = (0, 0, 0), texture = grass_texture):
         super().__init__(
             parent = scene,
             position = position,
             model = "assets/block",
             origin_y = 0.5,
-            texture = grass_texture,
+            texture = texture,
             color = color.color(0, 0, random.uniform(0.9, 1)),
             highlight_color = color.white,
             scale = 0.5
         )
-
+update main file
     def input(self, key):
         if self.hovered:
             if key == "left mouse down":
