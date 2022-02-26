@@ -7,6 +7,19 @@ grass_texture = load_texture("assets/grass_block.png")
 stone_texture = load_texture("assets/stone_block.png")
 brick_texture = load_texture("assets/brick_block.png")
 dirt_texture = load_texture("assets/dirt_block.png")
+block_pick = 1
+
+def update():
+    global block_pick
+
+    if held_keys[1]:
+        block_pick = 1
+    elif held_keys[2]:
+        block_pick = 2
+    elif held_keys[3]:
+        block_pick = 3
+    elif held_keys[4]:
+        block_pick = 4
 
 class Voxel(Button):
     def __init__(self, position = (0, 0, 0), texture = grass_texture):
@@ -24,7 +37,14 @@ class Voxel(Button):
     def input(self, key):
         if self.hovered:
             if key == "left mouse down":
-                voxel = Voxel(position = self.position + mouse.normal)
+                if block_pick == 1:
+                    voxel = Voxel(position = self.position + mouse.normal, texture = grass_texture)
+                elif block_pick == 2:
+                    voxel = Voxel(position = self.position + mouse.normal, texture = stone_texture)
+                elif block_pick == 3:
+                    voxel = Voxel(position = self.position + mouse.normal, texture = brick_texture)
+                elif block_pick == 4:
+                    voxel = Voxel(position = self.position + mouse.normal, texture = dirt_texture)
 
             if key == "right mouse down":
                 destroy(self)
