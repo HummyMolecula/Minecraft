@@ -11,6 +11,8 @@ sky_texture = load_texture("assets/skybox.png")
 punch_sound = Audio("assets/punch_sound", loop = False, autoplay = False)
 block_pick = 1
 
+window.exit_button.visible = False
+
 def update():
     global block_pick
 
