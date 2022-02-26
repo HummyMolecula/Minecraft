@@ -20,6 +20,7 @@ class Voxel(Button):
             highlight_color = color.white,
             scale = 0.5
         )
+
     def input(self, key):
         if self.hovered:
             if key == "left mouse down":
