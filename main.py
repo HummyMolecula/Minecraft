@@ -15,8 +15,8 @@ class Voxel(Button):
 
 app = Ursina()
 
-for z in range(8):
-    for x in range(8):
+for z in range(20):
+    for x in range(20):
         voxel = Voxel((x, 0, z))
 
 player = FirstPersonController()
