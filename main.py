@@ -2,7 +2,7 @@ from ursina import *
 
 class Voxel(Button):
     def __init__(self):
-        super.__init__(
+        super().__init__(
             parent = scene,
             position = (0, 0, 0),
             model = "cube",
